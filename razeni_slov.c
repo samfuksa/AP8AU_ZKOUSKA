@@ -8,6 +8,7 @@ Write your code in this editor and press "Run" button to compile and execute it.
 
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 int main()
 {
     char pole[5][256] = {};
@@ -15,7 +16,7 @@ int main()
     for(int i = 0; i<5; i++){
         
         fgets(pole[i], 256, stdin);
-        
+        pole[i][strcspn(pole[i],"\n")] = '\0';
     }
     char temp[256];
     for(int i = 0; i<5-1; i++){
